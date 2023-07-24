@@ -1,0 +1,28 @@
+<!-- auth_app/templates/auth_app/register.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscription</title>
+</head>
+<body>
+<h2>Inscription</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {{ form.username.errors }}
+    <label for="{{ form.username.id_for_label }}">Nom d'utilisateur :</label>
+    {{ form.username }}
+
+    {{ form.password1.errors }}
+    <label for="{{ form.password1.id_for_label }}">Mot de passe :</label>
+    {{ form.password1 }}
+
+    {{ form.password2.errors }}
+    <label for="{{ form.password2.id_for_label }}">Confirmation du mot de passe :</label>
+    {{ form.password2 }}
+
+    <input type="submit" value="S'inscrire">
+</form>
+</body>
+</html>
