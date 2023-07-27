@@ -1,0 +1,46 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+a.navbar-brand {
+    color: #333;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.main {
+    min-height: 70vh; /* ensures footer is at the bottom for pages with less content */
+}
+
+.confirmation {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}

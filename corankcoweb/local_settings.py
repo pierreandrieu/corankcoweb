@@ -1,10 +1,15 @@
 from pathlib import Path
 from decouple import Config
 from dotenv import load_dotenv
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # path of env variables
-env_path = "/home/pierre/workspace/corankcoweb/.env"
-load_dotenv(dotenv_path="/home/pierre/workspace/corankcoweb/.env")
+env_path = BASE_DIR + "/.env"
+load_dotenv(dotenv_path=env_path)
+
+
 # config Object with right path
 config = Config(env_path)
 
@@ -16,11 +21,10 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS_CORANKCOWEB', default='localhost').split('
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-# Email configurations
+# configurations
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT')
@@ -40,6 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'auth_app',
     'corankcoweb'
 ]
@@ -66,5 +74,3 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
-
